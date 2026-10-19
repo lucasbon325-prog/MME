@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team MME</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #0b0b1c;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #65dfff, #8b5cf6);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 35px;
+  letter-spacing: 4px;
+  color: #101027;
+}
+
+nav {
+  padding: 16px;
+  text-align: center;
+  background: #15152d;
+}
+
+nav a {
+  color: #8ee7ff;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 390px;
+  padding: 75px 20px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, #6c46bd55, transparent 60%),
+    #0b0b1c;
+}
+
+.hero h2 {
+  font-size: clamp(35px, 8vw, 60px);
+  margin-bottom: 15px;
+}
+
+.hero h2 span {
+  color: #78dcff;
+}
+
+.hero p {
+  color: #c7c7e7;
+  line-height: 1.8;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 25px;
+  color: #101027;
+  background: linear-gradient(90deg, #78dcff, #a17aff);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section:not(.hero) {
+  padding: 45px 20px;
+  text-align: center;
+}
+
+h3 {
+  color: #9e8aff;
+  font-size: 28px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  max-width: 900px;
+  margin: 25px auto 0;
+}
+
+.card {
+  flex: 1 1 220px;
+  max-width: 280px;
+  padding: 25px;
+  border: 1px solid #725ce8;
+  border-radius: 15px;
+  background: #17172f;
+}
+
+.card p {
+  color: #c7c7e7;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #b9b9d7;
+  background: #15152d;
+}
+
+@media (max-width: 500px) {
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TEAM MME</h1>
+  <p>💙 Unis par le jeu 💜</p>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#team">La team</a>
+  <a href="#jeux">Nos jeux</a>
+  <a href="#rejoindre">Nous rejoindre</a>
+</nav>
+
+<main>
+  <div class="hero" id="accueil">
+    <h2>Bienvenue chez<br><span>TEAM MME</span></h2>
+    <p>Une équipe, une passion, un seul objectif.<br>
+    Entre dans notre univers gaming !</p>
+    <a class="button" href="#rejoindre">REJOINDRE LA TEAM ↗</a>
+  </div>
+
+  <section id="team">
+    <h3>Qui sommes-nous ?</h3>
+    <p>
+      La Team MME rassemble des joueurs passionnés,
+      prêts à s'amuser, progresser et gagner ensemble.
+    </p>
+  </section>
+
+  <section id="jeux">
+    <h3>Nos jeux 🎮</h3>
+    <div class="cards">
+      <div class="card">
+        <h2>🎮</h2>
+        <h4>Nos jeux préférés</h4>
+        <p>Ajoute ici les jeux de la Team MME.</p>
+      </div>
+
+      <div class="card">
+        <h2>⚡</h2>
+        <h4>Nos défis</h4>
+        <p>Des parties, des défis et du fun en équipe.</p>
+      </div>
+
+      <div class="card">
+        <h2>🏆</h2>
+        <h4>Nos objectifs</h4>
+        <p>Progresser ensemble et représenter MME.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="rejoindre">
+    <h3>Rejoins la Team MME 💜</h3>
+    <p>Tu veux faire partie de l'aventure ?</p>
+    <!-- Remplace le # par ton lien Discord -->
+    <a class="button" href="#">REJOINDRE NOTRE COMMUNAUTÉ</a>
+  </section>
+</main>
+
+<footer>
+  © 2026 TEAM MME — Bleu ciel & violet 💙💜
+</footer>
+
+</body>
+</html>
