@@ -1,128 +1,189 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team MME</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEAM MME</title>
 
 <style>
-* {
-  box-sizing: border-box;
+:root {
+  --bleu: #78dcff;
+  --violet: #9b6bff;
+  --fond: #090b18;
+  --carte: #17172d;
 }
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  background: var(--fond);
   color: white;
-  background: #0b0b1c;
+  font-family: Arial, sans-serif;
 }
 
 header {
-  padding: 20px;
-  text-align: center;
-  background: linear-gradient(90deg, #65dfff, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6%;
+  background: #111126;
+  border-bottom: 1px solid #39305c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 35px;
-  letter-spacing: 4px;
-  color: #101027;
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--bleu);
 }
 
-nav {
-  padding: 16px;
-  text-align: center;
-  background: #15152d;
+.logo span { color: var(--violet); }
+
+.menu {
+  position: relative;
 }
 
-nav a {
-  color: #8ee7ff;
+.menu-button {
+  background: transparent;
+  color: white;
+  border: 1px solid #514477;
+  border-radius: 10px;
+  font-size: 27px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 53px;
+  width: 190px;
+  background: #191832;
+  border: 1px solid var(--violet);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 10px 35px #0008;
+}
+
+.dropdown.open { display: block; }
+
+.dropdown a {
+  display: block;
+  padding: 13px;
   text-decoration: none;
-  margin: 10px;
-  font-weight: bold;
+  color: white;
+  border-radius: 7px;
+}
+
+.dropdown a:hover {
+  background: #302650;
+  color: var(--bleu);
 }
 
 .hero {
-  min-height: 390px;
-  padding: 75px 20px;
   text-align: center;
-  background:
-    radial-gradient(circle at top, #6c46bd55, transparent 60%),
-    #0b0b1c;
+  padding: 95px 20px;
+  background: radial-gradient(ellipse at top, #7749c64a, transparent 65%);
 }
 
-.hero h2 {
-  font-size: clamp(35px, 8vw, 60px);
-  margin-bottom: 15px;
+.hero h1 {
+  font-size: clamp(42px, 9vw, 75px);
+  margin: 10px 0;
 }
 
-.hero h2 span {
-  color: #78dcff;
-}
+.hero h1 span { color: var(--bleu); }
 
 .hero p {
-  color: #c7c7e7;
+  color: #c8c8e2;
   line-height: 1.8;
 }
 
 .button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 14px 25px;
-  color: #101027;
-  background: linear-gradient(90deg, #78dcff, #a17aff);
-  border-radius: 10px;
+  margin: 15px 5px;
+  padding: 13px 20px;
+  border-radius: 9px;
   text-decoration: none;
   font-weight: bold;
+  color: #0b0b1c;
+  background: linear-gradient(100deg, var(--bleu), var(--violet));
 }
 
-section:not(.hero) {
-  padding: 45px 20px;
+section {
+  padding: 55px 7%;
   text-align: center;
+  scroll-margin-top: 75px;
 }
 
-h3 {
-  color: #9e8aff;
-  font-size: 28px;
+section h2 {
+  color: var(--bleu);
+  font-size: 30px;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.description {
+  color: #bcbdd8;
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 18px;
-  max-width: 900px;
-  margin: 25px auto 0;
+  max-width: 1000px;
+  margin: 30px auto 0;
 }
 
 .card {
-  flex: 1 1 220px;
-  max-width: 280px;
-  padding: 25px;
-  border: 1px solid #725ce8;
+  background: var(--carte);
+  border: 1px solid #5b468c;
   border-radius: 15px;
-  background: #17172f;
+  padding: 25px 18px;
+  overflow-wrap: anywhere;
 }
 
+.card h3 { color: var(--violet); }
+
 .card p {
-  color: #c7c7e7;
+  color: #c4c4dc;
   line-height: 1.6;
 }
 
-footer {
-  padding: 25px;
-  text-align: center;
-  color: #b9b9d7;
-  background: #15152d;
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+  font-weight: bold;
+  color: #090b18;
+  background: linear-gradient(135deg, var(--bleu), var(--violet));
 }
 
-@media (max-width: 500px) {
-  nav a {
-    display: inline-block;
-    margin: 8px;
-  }
+.social-link {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  border: 1px solid var(--violet);
+  border-radius: 8px;
+  color: var(--bleu);
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #111126;
+  color: #aaaaca;
+  border-top: 1px solid #39305c;
 }
 </style>
 </head>
@@ -130,67 +191,144 @@ footer {
 <body>
 
 <header>
-  <h1>TEAM MME</h1>
-  <p>💙 Unis par le jeu 💜</p>
+  <div class="logo">TEAM <span>MME</span></div>
+
+  <div class="menu">
+    <button class="menu-button" id="menuButton"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="dropdown">⋮</button>
+
+    <nav class="dropdown" id="dropdown">
+      <a href="#accueil">🏠 Accueil</a>
+      <a href="#roster">🎮 Roster</a>
+      <a href="#effectif">👥 Effectif</a>
+      <a href="#reseaux">📱 Réseaux</a>
+      <a href="#contacts">✉️ Contacts</a>
+    </nav>
+  </div>
 </header>
 
-<nav>
-  <a href="#accueil">Accueil</a>
-  <a href="#team">La team</a>
-  <a href="#jeux">Nos jeux</a>
-  <a href="#rejoindre">Nous rejoindre</a>
-</nav>
-
 <main>
-  <div class="hero" id="accueil">
-    <h2>Bienvenue chez<br><span>TEAM MME</span></h2>
-    <p>Une équipe, une passion, un seul objectif.<br>
-    Entre dans notre univers gaming !</p>
-    <a class="button" href="#rejoindre">REJOINDRE LA TEAM ↗</a>
+
+<section class="hero" id="accueil">
+  <p>BIENVENUE DANS NOTRE UNIVERS</p>
+  <h1>TEAM <span>MME</span></h1>
+  <p>Une team. Une passion. Un objectif.</p>
+  <a href="#roster" class="button">DÉCOUVRIR LA TEAM ↗</a>
+</section>
+
+<section id="roster">
+  <h2>🎮 Notre Roster</h2>
+  <p class="description">
+    Découvre les joueurs qui représentent la Team MME.
+  </p>
+
+  <div class="grid">
+    <article class="card">
+      <div class="avatar">M</div>
+      <h3>Joueur 1</h3>
+      <p>Rôle : Leader</p>
+      <p>Jeu : À compléter</p>
+    </article>
+
+    <article class="card">
+      <div class="avatar">M</div>
+      <h3>Joueur 2</h3>
+      <p>Rôle : Joueur</p>
+      <p>Jeu : À compléter</p>
+    </article>
+
+    <article class="card">
+      <div class="avatar">M</div>
+      <h3>Joueur 3</h3>
+      <p>Rôle : Joueur</p>
+      <p>Jeu : À compléter</p>
+    </article>
   </div>
+</section>
 
-  <section id="team">
-    <h3>Qui sommes-nous ?</h3>
-    <p>
-      La Team MME rassemble des joueurs passionnés,
-      prêts à s'amuser, progresser et gagner ensemble.
-    </p>
-  </section>
+<section id="effectif">
+  <h2>👥 Notre Effectif</h2>
+  <p class="description">
+    Les personnes qui font vivre la Team MME.
+  </p>
 
-  <section id="jeux">
-    <h3>Nos jeux 🎮</h3>
-    <div class="cards">
-      <div class="card">
-        <h2>🎮</h2>
-        <h4>Nos jeux préférés</h4>
-        <p>Ajoute ici les jeux de la Team MME.</p>
-      </div>
+  <div class="grid">
+    <article class="card">
+      <h3>Direction</h3>
+      <p>Chef : Trax</p>
+      <p>Co-chef : Raze</p>
+    </article>
 
-      <div class="card">
-        <h2>⚡</h2>
-        <h4>Nos défis</h4>
-        <p>Des parties, des défis et du fun en équipe.</p>
-      </div>
+    <article class="card">
+      <h3>Joueurs</h3>
+      <p>Nombre de joueurs : À compléter</p>
+      <p>Recrutement : À compléter</p>
+    </article>
 
-      <div class="card">
-        <h2>🏆</h2>
-        <h4>Nos objectifs</h4>
-        <p>Progresser ensemble et représenter MME.</p>
-      </div>
-    </div>
-  </section>
+    <article class="card">
+      <h3>Staff</h3>
+      <p>Modérateurs : À compléter</p>
+      <p>Créateurs : À compléter</p>
+    </article>
+  </div>
+</section>
 
-  <section id="rejoindre">
-    <h3>Rejoins la Team MME 💜</h3>
-    <p>Tu veux faire partie de l'aventure ?</p>
-    <!-- Remplace le # par ton lien Discord -->
-    <a class="button" href="#">REJOINDRE NOTRE COMMUNAUTÉ</a>
-  </section>
+<section id="reseaux">
+  <h2>📱 Nos Réseaux</h2>
+  <p class="description">
+    Retrouve la Team MME sur ses réseaux officiels.
+  </p>
+
+  <a class="social-link" href="https://www.tiktok.com/@trax.exo?_r=1&_t=ZG-9Ah4uuC6328" data-social> TikTok </a>
+  <a class="social-link" href="#" data-social> Instagram </a>
+  <a class="social-link" href="https://www.youtube.com/@mmv_e-sport" data-social> YouTube </a>
+  <a class="social-link" href="https://discord.gg/kdTnxystW" data-social> Discord </a>
+</section>
+
+<section id="contacts">
+  <h2>✉️ Nous contacter</h2>
+  <p class="description">
+    Pour les recrutements, les partenariats ou les questions,
+    contacte la Team MME via ses réseaux officiels.
+  </p>
+  <a class="button" href="#reseaux">NOS CONTACTS ↗</a>
+</section>
+
 </main>
 
 <footer>
-  © 2026 TEAM MME — Bleu ciel & violet 💙💜
+  <p>© 2026 TEAM MME</p>
+  <p>Bleu ciel 💙 · Violet 💜</p>
 </footer>
 
+<script>
+const button = document.getElementById("menuButton");
+const dropdown = document.getElementById("dropdown");
+
+button.addEventListener("click", () => {
+  const ouvert = dropdown.classList.toggle("open");
+  button.setAttribute("aria-expanded", String(ouvert));
+});
+
+dropdown.querySelectorAll("a").forEach(lien => {
+  lien.addEventListener("click", () => {
+    dropdown.classList.remove("open");
+    button.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.querySelectorAll("[data-social]").forEach(lien => {
+  lien.addEventListener("click", event => {
+    if (lien.getAttribute("href") === "#") {
+      event.preventDefault();
+      alert("Ajoute le vrai lien de ce réseau dans le code !");
+    }
+  });
+});
+</script>
+
 </body>
-</html>
+                                          </html>
+                                          
